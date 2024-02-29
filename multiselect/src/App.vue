@@ -1,15 +1,110 @@
 <template>
   <div class="selects-wrapper">
-    <h1>Custom Selects</h1>
-    <div class="selects-inner">
+    <h1 class="custom-select-title">Custom Selects</h1>
+    <div class="selects-variants">
+      <MySelect
+          :default="arrayOfObjectOptions"
+          :is-object="true"
+          :tags="true"
+          label="Tags select with array"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+      <MySelect
+          :default="arrayOfObjectOptions"
+          :is-object="true"
+          :multiple="true"
+          label="Multi select with array"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+    </div>
+    <div class="selects-variants">
+      <MySelect
+          :default="arrayOfPrimitive"
+          :is-object="true"
+          :tags="true"
+          label="Tags select with primitive"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+      <MySelect
+          :default="arrayOfPrimitive"
+          :is-object="true"
+          :multiple="true"
+          label="Multi select with primitive"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+    </div>
+    <div class="selects-variants">
       <MySelect
           :default="arrayOfObjectOptions"
           :is-object="true"
           :multiple="false"
-          :tags="false"
-          :hideSelected="false"
-          :disabled="false"
-          label="Custom select"
+          label="Single select with array"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+      <MySelect
+          :default="arrayOfPrimitive"
+          :is-object="true"
+          :multiple="false"
+          label="Single select with primitive"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+    </div>
+    <div class="selects-variants">
+      <MySelect
+          :default="arrayOfObjectOptions"
+          :is-object="true"
+          :hideSelected="true"
+          :multiple="true"
+          label="Hide selected option"
+          placeholder="Choose value..."
+          label-prop="name"
+          value-prop="id"
+          select-styles="select-menu-max-height"
+          @changed="handleSelectChange"
+          @selected="handleSelect"
+          @deselected="handleDeselect"
+      />
+      <MySelect
+          :default="arrayOfObjectOptions"
+          :is-object="true"
+          :disabled="true"
+          label="Disable select"
           placeholder="Choose value..."
           label-prop="name"
           value-prop="id"
@@ -72,14 +167,20 @@ export default {
 </script>
 
 <style scoped>
-.selects-inner {
-  display: flex;
+.selects-variants {
+  display: grid;
   gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 450px;
 }
 
 .selects-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.custom-select-title {
+  margin-bottom: 20px;
 }
 </style>

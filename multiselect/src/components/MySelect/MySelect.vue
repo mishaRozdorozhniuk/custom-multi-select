@@ -103,11 +103,6 @@ export default {
       required: false,
       default: false
     },
-    search: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
   },
   setup(props, context) {
     const optionsCopy = ref(JSON.parse(JSON.stringify(props.default)))
