@@ -90,7 +90,7 @@
           :default="arrayOfObjectOptions"
           :is-object="true"
           :hideSelected="true"
-          :multiple="true"
+          :tags="true"
           label="Hide selected option"
           placeholder="Choose value..."
           label-prop="name"
