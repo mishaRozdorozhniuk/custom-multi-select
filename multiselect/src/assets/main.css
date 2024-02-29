@@ -1,9 +1,14 @@
 @import './base.css';
 
 #app {
-  margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
   background-color: rgba(201, 201, 201, 0.2);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  overflow: hidden;
 }
